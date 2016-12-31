@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name    = "ThemeManager"
-  s.version = "0.0.0"
+  s.version = "0.1.0"
   s.summary = "Easy UIKit theming"
   s.author  = { "Ed Wellbrook" => "edwellbrook@gmail.com" }
 
