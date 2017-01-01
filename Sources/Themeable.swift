@@ -3,7 +3,7 @@
 //  Themeable
 //
 //  Created by Edward Wellbrook on 30/12/2016.
-//  Copyright © 2016 Ed Wellbrook. All rights reserved.
+//  Copyright © 2016-2017 Ed Wellbrook. All rights reserved.
 //
 
 import Foundation
