@@ -1,6 +1,6 @@
 import XCTest
-@testable import ThemeManagerTests
+@testable import ThemeableTests
 
 XCTMain([
-     testCase(ThemeManagerTests.allTests),
+     testCase(ThemeableTests.allTests),
 ])

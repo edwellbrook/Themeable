@@ -1,7 +1,7 @@
 import XCTest
 import UIKit.UIView
 import UIKit.UIColor
-@testable import ThemeManager
+@testable import Themeable
 
 let whiteTheme = UITheme(backgroundColor: .white)
 let blackTheme = UITheme(backgroundColor: .black)
@@ -35,7 +35,7 @@ final class ThemedView: UIView, Themeable {
 
 }
 
-class ThemeManagerTests: XCTestCase {
+class ThemeableTests: XCTestCase {
     func testExample() {
         let view1 = ThemedView()
 

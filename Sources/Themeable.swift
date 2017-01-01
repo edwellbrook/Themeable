@@ -1,6 +1,6 @@
 //
 //  ThemeManager.swift
-//  ThemeManager
+//  Themeable
 //
 //  Created by Edward Wellbrook on 30/12/2016.
 //  Copyright © 2016 Ed Wellbrook. All rights reserved.
@@ -55,7 +55,7 @@ public final class Themer<T: Themeable> {
         self.themeable = themeable
         self.themeable?.applyTheme(theme: self.manager.theme)
     }
-    
+
 }
 
 public protocol Themeable: class {
@@ -65,5 +65,5 @@ public protocol Themeable: class {
     var themer: Themer<Self> { get }
 
     func applyTheme(theme: ThemeType)
-    
+
 }
