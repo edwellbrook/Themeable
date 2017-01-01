@@ -3,12 +3,13 @@ import UIKit.UIView
 import UIKit.UIColor
 @testable import Themeable
 
-let whiteTheme = UITheme(backgroundColor: .white)
-let blackTheme = UITheme(backgroundColor: .black)
+let whiteTheme = UITheme(identifier: "co.brushedtype.Themeable.white-theme", backgroundColor: .white)
+let blackTheme = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: .black)
 
 let manager = ThemeManager<UITheme>(default: whiteTheme)
 
-struct UITheme {
+struct UITheme: Theme {
+    let identifier: String
     let backgroundColor: UIColor
 }
 

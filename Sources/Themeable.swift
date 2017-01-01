@@ -47,23 +47,29 @@ public final class Themer<T: Themeable> {
 
     private func notificationHandler(notification: Notification) {
         if let theme = notification.userInfo?["theme"] as? T.ThemeType {
-            self.themeable?.applyTheme(theme: theme)
+            self.themeable?.apply(theme: theme)
         }
     }
 
     public func theme(_ themeable: T) {
         self.themeable = themeable
-        self.themeable?.applyTheme(theme: self.manager.theme)
+        self.themeable?.apply(theme: self.manager.theme)
     }
 
 }
 
 public protocol Themeable: class {
 
-    associatedtype ThemeType
+    associatedtype ThemeType: Theme
 
     var themer: Themer<Self> { get }
 
-    func applyTheme(theme: ThemeType)
+    func apply(theme: ThemeType)
+
+}
+
+public protocol Theme {
+
+    var identifier: String { get }
 
 }
