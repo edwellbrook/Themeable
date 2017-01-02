@@ -30,7 +30,7 @@ final class ThemedView: UIView, Themeable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func applyTheme(theme: UITheme) {
+    func apply(theme: UITheme) {
         self.backgroundColor = theme.backgroundColor
     }
 
@@ -56,7 +56,7 @@ class ThemeableTests: XCTestCase {
     }
 
 
-    static var allTests : [(String, (ThemeManagerTests) -> () throws -> Void)] {
+    static var allTests : [(String, (ThemeableTests) -> () throws -> Void)] {
         return [
             ("testExample", testExample),
         ]
