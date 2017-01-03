@@ -11,6 +11,16 @@ changing. I recommend not using this in production apps.
 - Automatically reuse last used theme
 - Extremely flexible (build and load your theme the way that works for you)
 
+## Installation
+
+Installing with [CocoaPods](https://cocoapods.org):
+
+```ruby
+# In your Podfile add the following, then
+# save and run `pod install`:
+pod 'Themeable'
+```
+
 ## Example Usage
 
 ```swift
