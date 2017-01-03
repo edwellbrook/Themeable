@@ -12,7 +12,7 @@ import UIKit
 import Themeable
 
 // Define the theme and its properties to be used throughout your app
-struct AlertsTheme: Theme {
+struct MyAppTheme: Theme {
     let identifier: String
 
     let seperatorColor: UIColor
@@ -48,7 +48,7 @@ final class ActivityTableViewController: UITableViewController, Themeable {
     }
 
     // function will be called whenever the theme changes
-    func apply(theme: AlertsTheme) {
+    func apply(theme: MyAppTheme) {
         self.tableView.separatorColor = theme.seperatorColor
         self.tableView.backgroundColor = theme.lightBackgroundColor
     }
