@@ -19,14 +19,14 @@ struct MyAppTheme: Theme {
     let lightBackgroundColor: UIColor
     let statusBarStyle: UIStatusBarStyle
 
-    static let light = AlertsTheme(
+    static let light = MyAppTheme(
         identifier: "co.brushedtype.Themeable.light-theme",
         seperatorColor: .lightGray,
         lightBackgroundColor: .white,
         statusBarStyle: .default
     )
 
-    static let dark = AlertsTheme(
+    static let dark = MyAppTheme(
         identifier: "co.brushedtype.Themeable.dark-theme",
         seperatorColor: .gs_border,
         lightBackgroundColor: .gs_gray,
