@@ -3,14 +3,15 @@ import UIKit.UIView
 import UIKit.UIColor
 @testable import Themeable
 
-let whiteTheme = UITheme(identifier: "co.brushedtype.Themeable.white-theme", backgroundColor: .white)
-let blackTheme = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: .black)
 
-let manager = ThemeManager<UITheme>(default: whiteTheme)
+let manager = ThemeManager<UITheme>(default: .white)
 
 struct UITheme: Theme {
     let identifier: String
     let backgroundColor: UIColor
+
+    static let white = UITheme(identifier: "co.brushedtype.Themeable.white-theme", backgroundColor: .white)
+    static let black = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: .black)
 }
 
 final class ThemedView: UIView, Themeable {
@@ -37,6 +38,7 @@ final class ThemedView: UIView, Themeable {
 }
 
 class ThemeableTests: XCTestCase {
+
     func testExample() {
         let view1 = ThemedView()
 
@@ -44,7 +46,7 @@ class ThemeableTests: XCTestCase {
         XCTAssertEqual(view1.backgroundColor, UIColor.white)
 
         // change theme
-        manager.theme = blackTheme
+        manager.theme = .black
 
         // verify view has changed with theme
         XCTAssertEqual(view1.backgroundColor, UIColor.black)

@@ -68,8 +68,18 @@ public protocol Themeable: class {
 
 }
 
-public protocol Theme {
+public protocol Theme: Equatable {
 
     var identifier: String { get }
+
+    static func ==(lhs: Self, rhs: Self) -> Bool
+    
+}
+
+public extension Theme {
+
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
 
 }
