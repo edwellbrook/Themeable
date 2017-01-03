@@ -13,12 +13,11 @@ import Themeable
 
 // Define the theme and its properties to be used throughout your app
 struct MyAppTheme: Theme {
-    let identifier: String
 
+    let identifier: String
     let seperatorColor: UIColor
     let lightBackgroundColor: UIColor
     let statusBarStyle: UIStatusBarStyle
-
 
     static let light = AlertsTheme(
         identifier: "co.brushedtype.Themeable.light-theme",
@@ -40,7 +39,7 @@ struct MyAppTheme: Theme {
 // call `self.themer.theme(self)` once your view has been initialised/loaded
 final class ActivityTableViewController: UITableViewController, Themeable {
 
-    let themer = Themer<ActivityTableViewController>(manager: AppDelegate.ThemingManager)
+    let themer: Themer<ActivityTableViewController> = Themer(manager: AppDelegate.ThemingManager)
 
     override func viewDidLoad() {
         super.viewDidLoad()
