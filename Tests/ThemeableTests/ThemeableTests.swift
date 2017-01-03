@@ -1,10 +1,18 @@
+//
+//  ThemeableTests.swift
+//  ThemeableTests
+//
+//  Created by Edward Wellbrook on 30/12/2016.
+//  Copyright © 2016-2017 Edward Wellbrook. All rights reserved.
+//
+
 import XCTest
 import UIKit.UIView
 import UIKit.UIColor
 @testable import Themeable
 
 
-let manager = ThemeManager<UITheme>(default: .white)
+let manager = ThemeManager<UITheme>(default: .white, forceDefault: true)
 
 struct UITheme: Theme {
     let identifier: String
@@ -12,6 +20,8 @@ struct UITheme: Theme {
 
     static let white = UITheme(identifier: "co.brushedtype.Themeable.white-theme", backgroundColor: .white)
     static let black = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: .black)
+
+    static let variants: [UITheme] = [ .white, .black ]
 }
 
 final class ThemedView: UIView, Themeable {
@@ -55,6 +65,9 @@ class ThemeableTests: XCTestCase {
 
         // verify new view has been created with latest theme
         XCTAssertEqual(view2.backgroundColor, UIColor.black)
+
+        // verify theme manager uses last used theme
+        XCTAssertEqual(UITheme.black, ThemeManager(default: .white).theme)
     }
 
 

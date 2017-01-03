@@ -11,6 +11,9 @@ changing. I recommend not using this in production apps.
 import UIKit
 import Themeable
 
+// Set global/singleton ThemeManager somewhere
+let ThemingManager = ThemeManager<MyAppTheme>(default: .light)
+
 // Define the theme and its properties to be used throughout your app
 struct MyAppTheme: Theme {
 
@@ -32,14 +35,17 @@ struct MyAppTheme: Theme {
         lightBackgroundColor: .gray,
         statusBarStyle: .lightContent
     )
-    
+
+    // Expose the available theme variants
+    static let variants: [MyAppTheme] = [ .light, .dark ]
+
 }
 
-// In your View or ViewController add a `themer` property, the `apply(theme:)` method and 
+// In your View or ViewController add a `themer` property, the `apply(theme:)` method and
 // call `self.themer.theme(self)` once your view has been initialised/loaded
 final class ActivityTableViewController: UITableViewController, Themeable {
 
-    let themer: Themer<ActivityTableViewController> = Themer(manager: AppDelegate.ThemingManager)
+    let themer: Themer<ActivityTableViewController> = Themer(manager: ThemingManager)
 
     override func viewDidLoad() {
         super.viewDidLoad()
