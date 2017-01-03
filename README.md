@@ -28,8 +28,8 @@ struct MyAppTheme: Theme {
 
     static let dark = MyAppTheme(
         identifier: "co.brushedtype.Themeable.dark-theme",
-        seperatorColor: .gs_border,
-        lightBackgroundColor: .gs_gray,
+        seperatorColor: .black,
+        lightBackgroundColor: .gray,
         statusBarStyle: .lightContent
     )
     
