@@ -5,6 +5,12 @@ Easy UIKit theming
 __Please note:__ This is still a work in progress and not complete. The docs are incomplete and much will be
 changing. I recommend not using this in production apps.
 
+## Features
+
+- Type-safe API
+- Automatically reuse last used theme
+- Extremely flexible (build and load your theme the way that works for you)
+
 ## Example Usage
 
 ```swift
