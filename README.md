@@ -1,5 +1,7 @@
 # Themeable
 
+[![Build Status](https://travis-ci.org/edwellbrook/Themeable.svg?branch=master)](https://travis-ci.org/edwellbrook/Themeable)
+
 Easy UIKit theming
 
 __Please note:__ This is still a work in progress and not complete. The docs are incomplete and much will be
