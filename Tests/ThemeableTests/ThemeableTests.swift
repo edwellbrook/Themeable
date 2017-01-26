@@ -7,38 +7,33 @@
 //
 
 import XCTest
-import UIKit.UIView
-import UIKit.UIColor
 @testable import Themeable
-
 
 let manager = ThemeManager<UITheme>(default: .white, forceDefault: true)
 
+enum TestColor {
+    case white
+    case black
+}
+
 struct UITheme: Theme {
     let identifier: String
-    let backgroundColor: UIColor
+    let backgroundColor: TestColor
 
-    static let white = UITheme(identifier: "co.brushedtype.Themeable.white-theme", backgroundColor: .white)
-    static let black = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: .black)
+    static let white = UITheme(identifier: "co.brushedtype.Themeable.white-theme", backgroundColor: TestColor.white)
+    static let black = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: TestColor.black)
 
     static let variants: [UITheme] = [ .white, .black ]
 }
 
-final class ThemedView: UIView, Themeable {
+class ThemedView: Themeable {
 
-    typealias ThemeType = UITheme
+    var backgroundColor: TestColor = .white
 
-    let themer = Themer<ThemedView>(manager: manager)
+    let themer = Themer<UITheme>(manager: manager)
 
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        self.themer.theme(self)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    init() {
+        self.themer.addThemeable(self)
     }
 
     func apply(theme: UITheme) {
@@ -53,18 +48,18 @@ class ThemeableTests: XCTestCase {
         let view1 = ThemedView()
 
         // view has been created with correct theme
-        XCTAssertEqual(view1.backgroundColor, UIColor.white)
+        XCTAssertEqual(view1.backgroundColor, TestColor.white)
 
         // change theme
         manager.theme = .black
 
         // verify view has changed with theme
-        XCTAssertEqual(view1.backgroundColor, UIColor.black)
+        XCTAssertEqual(view1.backgroundColor, TestColor.black)
 
         let view2 = ThemedView()
 
         // verify new view has been created with latest theme
-        XCTAssertEqual(view2.backgroundColor, UIColor.black)
+        XCTAssertEqual(view2.backgroundColor, TestColor.black)
 
         // verify theme manager uses last used theme
         XCTAssertEqual(UITheme.black, ThemeManager(default: .white).theme)
