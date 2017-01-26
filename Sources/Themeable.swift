@@ -11,6 +11,25 @@ import Foundation
 internal let ThemeNotification = Notification.Name("ThemeableDidSetTheme")
 private let CurrentThemeIdentifier = "ThemeableCurrentThemeIdentifier"
 
+
+public protocol Theme: Equatable {
+
+    var identifier: String { get }
+    static var variants: [Self] { get }
+
+    static func ==(lhs: Self, rhs: Self) -> Bool
+
+}
+
+public extension Theme {
+
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+
+}
+
+
 public final class ThemeManager<T: Theme> {
 
     public var theme: T {
@@ -36,6 +55,26 @@ public final class ThemeManager<T: Theme> {
         self.theme = themeWithId ?? theme
     }
 
+}
+
+
+public protocol Themeable: class {
+
+    associatedtype ThemeType: Theme
+
+    func apply(theme: ThemeType)
+
+}
+
+private final class FuncBox<T: Theme> {
+
+    typealias ThemingFn = (_ theme: T) -> Void
+
+    let apply: ThemingFn
+
+    init(_ fn: @escaping ThemingFn) {
+        self.apply = fn
+    }
 }
 
 
@@ -76,42 +115,6 @@ public final class Themer<T: Theme> {
             item?.apply(theme: theme)
         })
         self.functions.append(boxedFn)
-    }
-
-}
-
-private final class FuncBox<T: Theme> {
-
-    typealias ThemingFn = (_ theme: T) -> Void
-
-    let apply: ThemingFn
-
-    init(_ fn: @escaping ThemingFn) {
-        self.apply = fn
-    }
-}
-
-public protocol Themeable: class {
-
-    associatedtype ThemeType: Theme
-
-    func apply(theme: ThemeType)
-
-}
-
-public protocol Theme: Equatable {
-
-    var identifier: String { get }
-    static var variants: [Self] { get }
-
-    static func ==(lhs: Self, rhs: Self) -> Bool
-
-}
-
-public extension Theme {
-
-    static func ==(lhs: Self, rhs: Self) -> Bool {
-        return lhs.identifier == rhs.identifier
     }
 
 }
