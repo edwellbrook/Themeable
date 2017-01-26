@@ -12,6 +12,7 @@ changing. I recommend not using this in production apps.
 - Type-safe API
 - Transparent memory management
 - Automatically reuse last used theme
+- Thread safe UI updates
 - Theme Views and Controls without subclassing
 - Extremely flexible (build and load your theme the way that works for you)
 
@@ -62,7 +63,7 @@ struct MyAppTheme: Theme {
 }
 
 // In your View or ViewController add a `themer` property, the `apply(theme:)` method and
-// call `self.themer.theme(self)` once your view has been initialised/loaded
+// call `self.themer.addThemeable(self)` once your view has been initialised/loaded
 class TableViewController: UITableViewController, Themeable {
 
     let themer: Themer<MyAppTheme> = Themer(manager: ThemingManager)

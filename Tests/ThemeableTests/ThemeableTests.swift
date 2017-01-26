@@ -12,11 +12,11 @@ import XCTest
 let manager = ThemeManager<UITheme>(default: .white, forceDefault: true)
 
 enum TestColor {
-    case white
-    case black
+    case white, black
 }
 
 struct UITheme: Theme {
+
     let identifier: String
     let backgroundColor: TestColor
 
@@ -24,6 +24,7 @@ struct UITheme: Theme {
     static let black = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: TestColor.black)
 
     static let variants: [UITheme] = [ .white, .black ]
+
 }
 
 class ThemedView: Themeable {
@@ -71,4 +72,5 @@ class ThemeableTests: XCTestCase {
             ("testExample", testExample),
         ]
     }
+
 }
