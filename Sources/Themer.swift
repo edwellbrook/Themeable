@@ -8,21 +8,12 @@
 
 import Foundation
 
-private final class FuncBox<T: Theme> {
-
-    typealias ThemingFn = (_ theme: T) -> Void
-
-    let apply: ThemingFn
-
-    init(_ fn: @escaping ThemingFn) {
-        self.apply = fn
-    }
-}
-
 public final class Themer<T: Theme> {
 
+    private typealias ThemingFn = (_ theme: T) -> Void
+
     private var notificationToken: NSObjectProtocol? = nil
-    private var functions: [FuncBox<T>] = []
+    private var functions: [ThemingFn] = []
     private unowned var manager: ThemeManager<T>
 
 
@@ -43,7 +34,7 @@ public final class Themer<T: Theme> {
 
     private func applyFunctions(theme: T) {
         for fn in functions {
-            fn.apply(theme)
+            fn(theme)
         }
     }
 
@@ -51,11 +42,10 @@ public final class Themer<T: Theme> {
         // apply the current theme
         item.apply(theme: self.manager.theme)
 
-        // box and store application function
-        let boxedFn = FuncBox<T>({ [weak item] theme in
+        // store application function
+        self.functions.append({ [weak item] theme in
             item?.apply(theme: theme)
         })
-        self.functions.append(boxedFn)
     }
 
 }
