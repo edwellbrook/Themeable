@@ -8,7 +8,9 @@ changing. I recommend not using this in production apps.
 ## Features
 
 - Type-safe API
+- Transparent memory management
 - Automatically reuse last used theme
+- Theme Views and Controls without subclassing
 - Extremely flexible (build and load your theme the way that works for you)
 
 ## Installation
@@ -59,13 +61,13 @@ struct MyAppTheme: Theme {
 
 // In your View or ViewController add a `themer` property, the `apply(theme:)` method and
 // call `self.themer.theme(self)` once your view has been initialised/loaded
-final class ActivityTableViewController: UITableViewController, Themeable {
+class TableViewController: UITableViewController, Themeable {
 
-    let themer: Themer<ActivityTableViewController> = Themer(manager: ThemingManager)
+    let themer: Themer<MyAppTheme> = Themer(manager: ThemingManager)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.themer.theme(self)
+        self.themer.addThemeable(self)
     }
 
     // function will be called whenever the theme changes
