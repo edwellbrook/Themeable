@@ -46,11 +46,10 @@ public protocol Themeable: ThemeObservable {
     /// The Theme that the type can use
     associatedtype ThemeType: Theme
 
-    /**
-     * The function used to apply the Theme
-     *
-     * - parameter theme: The Theme being applied to the type
-     */
+
+    /// The function used to apply the Theme
+    ///
+    /// - Parameter theme: The Theme being applied to the type
     func apply(theme: ThemeType)
 
 }

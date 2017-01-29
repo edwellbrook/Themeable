@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Internal key for persisting the last used Theme in UserDefaults
+/// Private key for persisting the active Theme in UserDefaults
 private let CurrentThemeIdentifier = "ThemeableCurrentThemeIdentifier"
 
 /// The class for managing Theme state and persistence
@@ -29,15 +29,13 @@ public final class ThemeManager<T: Theme> {
 
     }
 
-    /**
-     * Initialize a ThemeManager with a default Theme. The manager will use the
-     * last used theme and fallback to the default if one isn't available or if
-     * `forceDefault` was used.
-     *
-     * - parameter default:      The default theme to use and fall back to
-     * - parameter forceDefault: Force the manager to use the default instead of
-     *                           loading the last used from storage
-     */
+    /// Initialize a ThemeManager with a default Theme. The manager will use the
+    /// last used theme and fallback to the default if one isn't available or if
+    /// `forceDefault` was used.
+    ///
+    /// - Parameter default:      The default theme to use and fall back to
+    /// - Parameter forceDefault: Force the manager to use the default instead of
+    ///                           loading the last used from storage
     public init(default theme: T, forceDefault: Bool = false) {
         guard forceDefault == false, let themeId = UserDefaults.standard.string(forKey: CurrentThemeIdentifier) else {
             self.activeTheme = theme
@@ -51,9 +49,7 @@ public final class ThemeManager<T: Theme> {
         self.activeTheme = themeWithId ?? theme
     }
 
-    /**
-     * Internal function for running the theming functions with a given Theme
-     */
+    /// Internal function for running the theming functions with a given Theme
     internal func updateObservers() {
         for item in self.observers.allObjects {
             if let observer = item as? ThemeObservable {
@@ -62,11 +58,9 @@ public final class ThemeManager<T: Theme> {
         }
     }
 
-    /**
-     * Register a Themeable object to receive Theme updates
-     *
-     * - parameter themeable: The Themeable item wanting to receive updates
-     */
+    /// Register a Themeable object to receive Theme updates
+    ///
+    /// - Parameter themeable: The object wanting to receive updates
     public func register<Item: Themeable>(themeable: Item) where Item.ThemeType == T {
         themeable.updateTheme()
 
