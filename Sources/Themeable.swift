@@ -8,9 +8,6 @@
 
 import Foundation
 
-/// The internal Notification.Name for posting Theme change notifications
-internal let ThemeNotification = Notification.Name("ThemeableDidSetTheme")
-
 /// A type that can be used to encapsulate theme values and variants
 public protocol Theme: Equatable {
 
@@ -20,8 +17,8 @@ public protocol Theme: Equatable {
     /// An array of all the available variants for a theme
     static var variants: [Self] { get }
 
-    /// Enforce equatability
-    static func ==(lhs: Self, rhs: Self) -> Bool
+    /// The shared ThemeManager for a theme
+    static var manager: ThemeManager<Self> { get }
 
 }
 
@@ -34,8 +31,17 @@ public extension Theme {
 
 }
 
+/// A type that observes Theme changes
+public protocol ThemeObservable: class {
+
+    /// The method called when a theme is changed. You generally shouldn't need
+    /// to implement this yourself
+    func updateTheme()
+
+}
+
 /// A type that can have a Theme applied to it
-public protocol Themeable: class {
+public protocol Themeable: ThemeObservable {
 
     /// The Theme that the type can use
     associatedtype ThemeType: Theme
@@ -46,5 +52,15 @@ public protocol Themeable: class {
      * - parameter theme: The Theme being applied to the type
      */
     func apply(theme: ThemeType)
+
+}
+
+public extension Themeable {
+
+    /// The default implementation for applying a theme after receiving an
+    /// update. You generally shouldn't need to implement this yourself
+    func updateTheme() {
+        self.apply(theme: Self.ThemeType.manager.activeTheme)
+    }
 
 }

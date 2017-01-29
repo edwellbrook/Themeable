@@ -9,8 +9,6 @@
 import XCTest
 @testable import Themeable
 
-let manager = ThemeManager<UITheme>(default: .white, forceDefault: true)
-
 enum TestColor {
     case white, black
 }
@@ -24,17 +22,16 @@ struct UITheme: Theme {
     static let black = UITheme(identifier: "co.brushedtype.Themeable.black-theme", backgroundColor: TestColor.black)
 
     static let variants: [UITheme] = [ .white, .black ]
+    static let manager = ThemeManager<UITheme>(default: .white, forceDefault: true)
 
 }
 
-class ThemedView: Themeable {
+class ThemeableView: Themeable {
 
     var backgroundColor: TestColor = .white
 
-    let themer = Themer<UITheme>(manager: manager)
-
     init() {
-        self.themer.addThemeable(self)
+        UITheme.manager.register(themeable: self)
     }
 
     func apply(theme: UITheme) {
@@ -46,24 +43,25 @@ class ThemedView: Themeable {
 class ThemeableTests: XCTestCase {
 
     func testExample() {
-        let view1 = ThemedView()
+        let view1 = ThemeableView()
 
         // view has been created with correct theme
         XCTAssertEqual(view1.backgroundColor, TestColor.white)
 
         // change theme
-        manager.theme = .black
+        UITheme.manager.activeTheme = .black
 
         // verify view has changed with theme
         XCTAssertEqual(view1.backgroundColor, TestColor.black)
 
-        let view2 = ThemedView()
+        let view2 = ThemeableView()
 
         // verify new view has been created with latest theme
         XCTAssertEqual(view2.backgroundColor, TestColor.black)
 
         // verify theme manager uses last used theme
-        XCTAssertEqual(UITheme.black, ThemeManager(default: .white).theme)
+        let NewManager = ThemeManager<UITheme>(default: .white)
+        XCTAssertEqual(UITheme.black, NewManager.activeTheme)
     }
 
 

@@ -14,14 +14,17 @@ private let CurrentThemeIdentifier = "ThemeableCurrentThemeIdentifier"
 /// The class for managing Theme state and persistence
 public final class ThemeManager<T: Theme> {
 
-    /// The theme currently in use
-    public var theme: T {
+    /// A list of observers to be notified when the theme changes
+    internal var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
+
+    /// The currently active theme
+    public var activeTheme: T {
 
         didSet {
-            NotificationCenter.default.post(name: ThemeNotification, object: self, userInfo: ["theme": self.theme])
+            self.updateObservers()
 
             // save theme for use next launch
-            UserDefaults.standard.set(self.theme.identifier, forKey: CurrentThemeIdentifier)
+            UserDefaults.standard.set(self.activeTheme.identifier, forKey: CurrentThemeIdentifier)
         }
 
     }
@@ -37,7 +40,7 @@ public final class ThemeManager<T: Theme> {
      */
     public init(default theme: T, forceDefault: Bool = false) {
         guard forceDefault == false, let themeId = UserDefaults.standard.string(forKey: CurrentThemeIdentifier) else {
-            self.theme = theme
+            self.activeTheme = theme
             return
         }
 
@@ -45,7 +48,29 @@ public final class ThemeManager<T: Theme> {
             theme.identifier == themeId
         })
 
-        self.theme = themeWithId ?? theme
+        self.activeTheme = themeWithId ?? theme
+    }
+
+    /**
+     * Internal function for running the theming functions with a given Theme
+     */
+    internal func updateObservers() {
+        for item in self.observers.allObjects {
+            if let observer = item as? ThemeObservable {
+                observer.updateTheme()
+            }
+        }
+    }
+
+    /**
+     * Register a Themeable object to receive Theme updates
+     *
+     * - parameter themeable: The Themeable item wanting to receive updates
+     */
+    public func register<Item: Themeable>(themeable: Item) where Item.ThemeType == T {
+        themeable.updateTheme()
+
+        self.observers.add(themeable)
     }
 
 }

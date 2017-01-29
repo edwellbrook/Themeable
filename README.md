@@ -32,9 +32,6 @@ pod 'Themeable'
 import UIKit
 import Themeable
 
-// Set global/singleton ThemeManager somewhere
-let ThemingManager = ThemeManager<MyAppTheme>(default: .light)
-
 // Define the theme and its properties to be used throughout your app
 struct MyAppTheme: Theme {
 
@@ -59,18 +56,21 @@ struct MyAppTheme: Theme {
 
     // Expose the available theme variants
     static let variants: [MyAppTheme] = [ .light, .dark ]
+    
+    // Expose the shared theme manager
+    static let manager = ThemeManager<MyAppTheme>(default: .light)
 
 }
 
-// In your View or ViewController add a `themer` property, the `apply(theme:)` method and
-// call `self.themer.addThemeable(self)` once your view has been initialised/loaded
+// Conform to the `Themeable` protocol and register for updates
 class TableViewController: UITableViewController, Themeable {
-
-    let themer: Themer<MyAppTheme> = Themer(manager: ThemingManager)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.themer.addThemeable(self)
+        
+        // register the themeable items once all the view and subviews
+        // have been loaded
+        MyAppTheme.manager.register(themeable: self)
     }
 
     // function will be called whenever the theme changes
