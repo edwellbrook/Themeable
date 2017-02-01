@@ -2,10 +2,9 @@
 
 [![Build Status](https://travis-ci.org/edwellbrook/Themeable.svg?branch=master)](https://travis-ci.org/edwellbrook/Themeable)
 
-Easy UIKit theming
+Easy, type-safe UI theming in Swift.
 
-__Please note:__ This is still a work in progress and not complete. The docs are incomplete and much will be
-changing. I recommend not using this in production apps.
+Pull requests are always very welcome.
 
 ## Features
 
