@@ -4,6 +4,8 @@
 
 Easy, type-safe UI theming in Swift.
 
+This project is still in it's early stages, so any and all feedback is welcome. Have any suggestions for how to make this library better? Please leave an issue :)
+
 Pull requests are always very welcome.
 
 ## Features
