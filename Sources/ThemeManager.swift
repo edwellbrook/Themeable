@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// Private key for persisting the active Theme in UserDefaults
-private let CurrentThemeIdentifier = "ThemeableCurrentThemeIdentifier"
-
 /// The class for managing Theme state and persistence
 public final class ThemeManager<T: Theme> {
+
+    /// The store for persisting the active theme
+    private let persistor: ThemePersistor
 
     /// A list of observers to be notified when the theme changes
     internal var observers: NSHashTable<AnyObject> = NSHashTable.weakObjects()
@@ -24,7 +24,7 @@ public final class ThemeManager<T: Theme> {
             self.updateObservers()
 
             // save theme for use next launch
-            UserDefaults.standard.set(self.activeTheme.identifier, forKey: CurrentThemeIdentifier)
+            self.persistor.saveThemeId(self.activeTheme.identifier)
         }
 
     }
@@ -34,10 +34,13 @@ public final class ThemeManager<T: Theme> {
     /// `forceDefault` was used.
     ///
     /// - Parameter default:      The default theme to use and fall back to
+    /// - Parameter persistor:    The store for persisting the active theme
     /// - Parameter forceDefault: Force the manager to use the default instead of
     ///                           loading the last used from storage
-    public init(default theme: T, forceDefault: Bool = false) {
-        guard forceDefault == false, let themeId = UserDefaults.standard.string(forKey: CurrentThemeIdentifier) else {
+    public init(default theme: T, persistor: ThemePersistor = UserDefaults.standard, forceDefault: Bool = false) {
+        self.persistor = persistor
+
+        guard forceDefault == false, let themeId = self.persistor.retreiveThemeId() else {
             self.activeTheme = theme
             return
         }
