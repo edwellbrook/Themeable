@@ -48,7 +48,7 @@
 		BCF88E751F476E3A0088A874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCF88E781F476E3A0088A874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCF88E7A1F476E3A0088A874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCF88E811F47726C0088A874 /* Themeable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Themeable.xcodeproj; path = ThemeableExample.xcodeproj/../../../Themeable.xcodeproj; sourceTree = "<group>"; };
+		BCF88E811F47726C0088A874 /* Themeable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Themeable.xcodeproj; path = ../Themeable.xcodeproj; sourceTree = "<group>"; };
 		BCF88E901F4772C60088A874 /* ExampleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
