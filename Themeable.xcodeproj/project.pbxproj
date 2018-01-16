@@ -6,65 +6,88 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		"Themeable::ThemeablePackageTests::ProductTarget" /* ThemeablePackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_44 /* Build configuration list for PBXAggregateTarget "ThemeablePackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_47 /* PBXTargetDependency */,
+			);
+			name = ThemeablePackageTests;
+			productName = ThemeablePackageTests;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		BC8109EE1F2DE5330078C4B1 /* ThemePersistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8109ED1F2DE5330078C4B1 /* ThemePersistor.swift */; };
-		OBJ_24 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Themeable.swift */; };
-		OBJ_25 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ThemeManager.swift */; };
-		OBJ_32 /* ThemeableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* ThemeableTests.swift */; };
-		OBJ_34 /* Themeable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Themeable.framework */; };
+		OBJ_24 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_30 /* ThemeableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ThemeableTests.swift */; };
+		OBJ_32 /* Themeable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Themeable::Themeable::Product" /* Themeable.framework */; };
+		OBJ_39 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* ThemeManager.swift */; };
+		OBJ_40 /* ThemePersistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ThemePersistor.swift */; };
+		OBJ_41 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Themeable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BC8109EC1F2DE4450078C4B1 /* PBXContainerItemProxy */ = {
+		BCBB9266200EA04300B65973 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_19;
+			remoteGlobalIDString = "Themeable::Themeable";
 			remoteInfo = Themeable;
+		};
+		BCBB9267200EA04400B65973 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Themeable::ThemeableTests";
+			remoteInfo = ThemeableTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC8109ED1F2DE5330078C4B1 /* ThemePersistor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePersistor.swift; sourceTree = "<group>"; };
-		OBJ_10 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		OBJ_13 /* ThemeableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableTests.swift; sourceTree = "<group>"; };
-		OBJ_17 /* Themeable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Themeable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_18 /* ThemeableTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThemeableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* ThemePersistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePersistor.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
+		OBJ_14 /* ThemeableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableTests.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Example */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Example; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
+		OBJ_9 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		"Themeable::Themeable::Product" /* Themeable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Themeable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Themeable::ThemeableTests::Product" /* ThemeableTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThemeableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_26 /* Frameworks */ = {
+		OBJ_31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				OBJ_32 /* Themeable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_33 /* Frameworks */ = {
+		OBJ_42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_34 /* Themeable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_11 /* Tests */ = {
+		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* ThemeableTests */,
+				OBJ_13 /* ThemeableTests */,
 			);
-			path = Tests;
-			sourceTree = "<group>";
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_12 /* ThemeableTests */ = {
+		OBJ_13 /* ThemeableTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_13 /* ThemeableTests.swift */,
+				OBJ_14 /* ThemeableTests.swift */,
 			);
 			name = ThemeableTests;
 			path = Tests/ThemeableTests;
@@ -73,8 +96,8 @@
 		OBJ_16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* Themeable.framework */,
-				OBJ_18 /* ThemeableTests.xctest */,
+				"Themeable::ThemeableTests::Product" /* ThemeableTests.xctest */,
+				"Themeable::Themeable::Product" /* Themeable.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -84,7 +107,8 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_11 /* Tests */,
+				OBJ_12 /* Tests */,
+				OBJ_15 /* Example */,
 				OBJ_16 /* Products */,
 			);
 			name = "";
@@ -95,29 +119,43 @@
 			children = (
 				OBJ_8 /* Themeable */,
 			);
-			path = Sources;
-			sourceTree = "<group>";
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_8 /* Themeable */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* Themeable.swift */,
-				BC8109ED1F2DE5330078C4B1 /* ThemePersistor.swift */,
-				OBJ_10 /* ThemeManager.swift */,
+				OBJ_9 /* ThemeManager.swift */,
+				OBJ_10 /* ThemePersistor.swift */,
+				OBJ_11 /* Themeable.swift */,
 			);
 			name = Themeable;
-			path = Sources;
+			path = Sources/Themeable;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_19 /* Themeable */ = {
+		"Themeable::SwiftPMPackageDescription" /* ThemeablePackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_20 /* Build configuration list for PBXNativeTarget "Themeable" */;
+			buildConfigurationList = OBJ_20 /* Build configuration list for PBXNativeTarget "ThemeablePackageDescription" */;
 			buildPhases = (
 				OBJ_23 /* Sources */,
-				OBJ_26 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThemeablePackageDescription;
+			productName = ThemeablePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"Themeable::Themeable" /* Themeable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_35 /* Build configuration list for PBXNativeTarget "Themeable" */;
+			buildPhases = (
+				OBJ_38 /* Sources */,
+				OBJ_42 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,24 +163,24 @@
 			);
 			name = Themeable;
 			productName = Themeable;
-			productReference = OBJ_17 /* Themeable.framework */;
+			productReference = "Themeable::Themeable::Product" /* Themeable.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_27 /* ThemeableTests */ = {
+		"Themeable::ThemeableTests" /* ThemeableTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_28 /* Build configuration list for PBXNativeTarget "ThemeableTests" */;
+			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "ThemeableTests" */;
 			buildPhases = (
-				OBJ_31 /* Sources */,
-				OBJ_33 /* Frameworks */,
+				OBJ_29 /* Sources */,
+				OBJ_31 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_35 /* PBXTargetDependency */,
+				OBJ_33 /* PBXTargetDependency */,
 			);
 			name = ThemeableTests;
 			productName = ThemeableTests;
-			productReference = OBJ_18 /* ThemeableTests.xctest */;
+			productReference = "Themeable::ThemeableTests::Product" /* ThemeableTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -165,8 +203,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_19 /* Themeable */,
-				OBJ_27 /* ThemeableTests */,
+				"Themeable::SwiftPMPackageDescription" /* ThemeablePackageDescription */,
+				"Themeable::ThemeableTests" /* ThemeableTests */,
+				"Themeable::Themeable" /* Themeable */,
+				"Themeable::ThemeablePackageTests::ProductTarget" /* ThemeablePackageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -176,27 +216,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_24 /* Themeable.swift in Sources */,
-				OBJ_25 /* ThemeManager.swift in Sources */,
-				BC8109EE1F2DE5330078C4B1 /* ThemePersistor.swift in Sources */,
+				OBJ_24 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_31 /* Sources */ = {
+		OBJ_29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_32 /* ThemeableTests.swift in Sources */,
+				OBJ_30 /* ThemeableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_39 /* ThemeManager.swift in Sources */,
+				OBJ_40 /* ThemePersistor.swift in Sources */,
+				OBJ_41 /* Themeable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_35 /* PBXTargetDependency */ = {
+		OBJ_33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_19 /* Themeable */;
-			targetProxy = BC8109EC1F2DE4450078C4B1 /* PBXContainerItemProxy */;
+			target = "Themeable::Themeable" /* Themeable */;
+			targetProxy = BCBB9266200EA04300B65973 /* PBXContainerItemProxy */;
+		};
+		OBJ_47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Themeable::ThemeableTests" /* ThemeableTests */;
+			targetProxy = BCBB9267200EA04400B65973 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -204,44 +257,22 @@
 		OBJ_21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Themeable.xcodeproj/Themeable_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Themeable;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				TARGET_NAME = Themeable;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		OBJ_22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Themeable.xcodeproj/Themeable_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Themeable;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				TARGET_NAME = Themeable;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
-		OBJ_29 /* Debug */ = {
+		OBJ_27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -251,16 +282,36 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Themeable.xcodeproj/ThemeableTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = ThemeableTests;
 			};
 			name = Debug;
 		};
+		OBJ_28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Themeable.xcodeproj/ThemeableTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = ThemeableTests;
+			};
+			name = Release;
+		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -275,31 +326,58 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		OBJ_30 /* Release */ = {
+		OBJ_36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Themeable.xcodeproj/ThemeableTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				INFOPLIST_FILE = Themeable.xcodeproj/Themeable_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				TARGET_NAME = ThemeableTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Themeable;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Themeable;
+			};
+			name = Debug;
+		};
+		OBJ_37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Themeable.xcodeproj/Themeable_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Themeable;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Themeable;
 			};
 			name = Release;
 		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -311,9 +389,20 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 			};
 			name = Release;
 		};
@@ -329,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_20 /* Build configuration list for PBXNativeTarget "Themeable" */ = {
+		OBJ_20 /* Build configuration list for PBXNativeTarget "ThemeablePackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_21 /* Debug */,
@@ -338,11 +427,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_28 /* Build configuration list for PBXNativeTarget "ThemeableTests" */ = {
+		OBJ_26 /* Build configuration list for PBXNativeTarget "ThemeableTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_29 /* Debug */,
-				OBJ_30 /* Release */,
+				OBJ_27 /* Debug */,
+				OBJ_28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_35 /* Build configuration list for PBXNativeTarget "Themeable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_36 /* Debug */,
+				OBJ_37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_44 /* Build configuration list for PBXAggregateTarget "ThemeablePackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_45 /* Debug */,
+				OBJ_46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
