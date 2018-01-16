@@ -57,7 +57,7 @@ public protocol Themeable: ThemeObservable {
 public extension Themeable {
 
     /// The function for applying a theme after receiving an update.
-    final func updateTheme() {
+    func updateTheme() {
         self.apply(theme: Self.ThemeType.manager.activeTheme)
     }
 

@@ -35,7 +35,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BCF88E811F47726C0088A874 /* Themeable.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_19;
+			remoteGlobalIDString = "Themeable::Themeable";
 			remoteInfo = Themeable;
 		};
 /* End PBXContainerItemProxy section */
@@ -106,8 +106,8 @@
 		BCF88E821F47726C0088A874 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BCF88E871F47726C0088A874 /* Themeable.framework */,
 				BCF88E891F47726C0088A874 /* ThemeableTests.xctest */,
+				BCF88E871F47726C0088A874 /* Themeable.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -330,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

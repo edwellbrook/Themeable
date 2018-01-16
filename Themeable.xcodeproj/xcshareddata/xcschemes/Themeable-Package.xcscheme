@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_19"
+               BlueprintIdentifier = "Themeable::Themeable"
                BuildableName = "Themeable.framework"
                BlueprintName = "Themeable"
                ReferencedContainer = "container:Themeable.xcodeproj">
@@ -26,13 +26,14 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_27"
+               BlueprintIdentifier = "Themeable::ThemeableTests"
                BuildableName = "ThemeableTests.xctest"
                BlueprintName = "ThemeableTests"
                ReferencedContainer = "container:Themeable.xcodeproj">
@@ -46,6 +47,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -55,7 +57,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_19"
+            BlueprintIdentifier = "Themeable::Themeable"
             BuildableName = "Themeable.framework"
             BlueprintName = "Themeable"
             ReferencedContainer = "container:Themeable.xcodeproj">
